@@ -7,43 +7,56 @@ function fizzbuzz() {
 
     
     // Put your code here...
-    for (let i = 0; i < 166 ; i++) {
+    for (let i = 0; i < 256 ; i++) {
 
-        let x = '';
+        let numList = [];
 
         if (i % 3 === 0) {
-            x = x + "Fizz";
+            // x = x + "Fizz";
+            numList.push("Fizz");
+
             // console.log("Fizz");
         }
 
         if (i % 13 === 0) {
-            x = x + "Fezz";
+            // x = x + "Fezz";
+            numList.push("Fezz");
         }
 
         if (i % 5 === 0) {
-            x = x + "Buzz";
+            // x = x + "Buzz";
             // console.log("Buzz");
+            numList.push("Buzz");
         }
 
         if (i % 7 === 0) {
-            x = x + "Bang";
+            // x = x + "Bang";
             // console.log("Bang");
+            numList.push("Bang");
         }
 
         if (i % 11 === 0) { 
-            x = '';
-            x = x + "Bong";
+            // x = '';
+            // x = x + "Bong";
+            numList.push("Bong");
         }
 
         if ((i % 11 === 0) && (i % 13 === 0)) { 
-            x = '';
-            x = x + "FezzBong";
+            numList = [];
+            // x = x + "FezzBong";
+            numList.push("FezzBong");
         }
         
-        if (x === '') {
-            x = x + i;
+        if (numList.length === 0) {
+            // x = x + i;
+            numList.push(i);
         }
-        console.log(x);
+
+        if (i % 17 === 0) {
+            // x = x
+            numList.reverse().join('');
+        }
+        console.log("" + numList.join(""));
     }
   
 };
