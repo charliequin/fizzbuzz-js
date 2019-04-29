@@ -1,62 +1,67 @@
-
+const readlineSync = require('readline-sync');
 
 // Here, we create our main function.
 function fizzbuzz() {
     
     console.log('Welcome to FizzBuzz!');
+    let answer = readlineSync.question('\nEnter number limit: ');
 
-    
-    // Put your code here...
-    for (let i = 0; i < 256 ; i++) {
+    let rules1 = readlineSync.question('Choose number 1 as Fizz: ');
+    let rules2 = readlineSync.question('Choose number 2 as Fezz: ');
+    let rules3 = readlineSync.question('Choose number 3 as Buzz: ');
+    let rules4 = readlineSync.question('Choose number 4 as Bang: ');
+    let rules5 = readlineSync.question('Choose number 5 a Bong: ');
+
+    // Loop runs through each statement sequentially, checking what 'i' is divisible by.
+    for (let i = 0; i < answer ; i++) {
 
         let numList = [];
 
-        if (i % 3 === 0) {
-            // x = x + "Fizz";
-            numList.push("Fizz");
-
-            // console.log("Fizz");
+        if (i < 1) {
+            console.log('\n');
         }
 
-        if (i % 13 === 0) {
-            // x = x + "Fezz";
+
+        if (i % rules1 === 0) {
+            numList.push("Fizz");
+        }
+
+
+        if (i % rules2 === 0) {
             numList.push("Fezz");
         }
 
-        if (i % 5 === 0) {
-            // x = x + "Buzz";
-            // console.log("Buzz");
+
+        if (i % rules3 === 0) {
             numList.push("Buzz");
         }
 
-        if (i % 7 === 0) {
-            // x = x + "Bang";
-            // console.log("Bang");
+
+        if (i % rules4 === 0) {
             numList.push("Bang");
         }
 
-        if (i % 11 === 0) { 
-            // x = '';
-            // x = x + "Bong";
+
+        if (i % rules5 === 0) { 
             numList.push("Bong");
         }
 
-        if ((i % 11 === 0) && (i % 13 === 0)) { 
-            numList = [];
-            // x = x + "FezzBong";
-            numList.push("FezzBong");
-        }
+
+        // if ((i % 11 === 0) && (i % 13 === 0)) { 
+        //     numList = [];
+        //     numList.push("FezzBong");
+        // }
+
         
-        if (numList.length === 0) {
-            // x = x + i;
+        /*if (numList.length === 0) {
             numList.push(i);
-        }
+        }*/
+
 
         if (i % 17 === 0) {
-            // x = x
             numList.reverse().join('');
         }
-        console.log("" + numList.join(""));
+        console.log(i + " " + numList.join(""));
     }
   
 };
