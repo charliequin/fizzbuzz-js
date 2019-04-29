@@ -5,39 +5,45 @@ function fizzbuzz() {
     
     console.log('Welcome to FizzBuzz!');
 
+    
     // Put your code here...
-    for (let i = 0; i < 106 ; i++) {
+    for (let i = 0; i < 166 ; i++) {
 
-        if ((i % 7 === 0) && (i % 5 === 0) && (i % 3 === 0)) {
-            console.log("FizzBuzzBang");
+        let x = '';
+
+        if (i % 3 === 0) {
+            x = x + "Fizz";
+            // console.log("Fizz");
         }
 
-         else if ((i % 5 === 0) && (i % 3 === 0)) {
-            console.log("FizzBuzz");
+        if (i % 13 === 0) {
+            x = x + "Fezz";
         }
 
-        else if ((i % 7 === 0) && (i % 3 === 0)) {
-            console.log("FizzBang");
+        if (i % 5 === 0) {
+            x = x + "Buzz";
+            // console.log("Buzz");
         }
 
-        else if ((i % 7 === 0) && (i % 5 === 0)) {
-            console.log("BuzzBang");
+        if (i % 7 === 0) {
+            x = x + "Bang";
+            // console.log("Bang");
         }
 
-        else if (i % 3 === 0) {
-            console.log("Fizz");
+        if (i % 11 === 0) { 
+            x = '';
+            x = x + "Bong";
         }
 
-        else if (i % 7 === 0) {
-            console.log("Bang")
+        if ((i % 11 === 0) && (i % 13 === 0)) { 
+            x = '';
+            x = x + "FezzBong";
         }
-
-
-        else if (i % 5 === 0) {
-            console.log("Buzz");
-        } else {
-            console.log(i);
+        
+        if (x === '') {
+            x = x + i;
         }
+        console.log(x);
     }
   
 };
